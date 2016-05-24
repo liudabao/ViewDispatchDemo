@@ -1,1 +1,5 @@
 # ViewDispatchDemo
+#view分发事件是由上之下。整个分发流程就好像企业的管理层级。从总经理到总监，再到部门经理，再到具体个人。中间某个层级可以拦截自主执行，也可以将事情下发到下个层级。
+#dispatchTouchEvent将事件下发
+#onIntercptTouchEvent拦截事件，ViewGroup才能拦截该事件
+#onTouchEvent消费事件，onTouch比onTouchEvent层级高
