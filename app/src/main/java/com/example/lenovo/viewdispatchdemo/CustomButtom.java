@@ -24,8 +24,43 @@ public class CustomButtom extends Button {
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
-        Log.e("ButtonTouch","touched");
-        return false;
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.e("ButtonTouch","touched down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.e("ButtonTouch","touched move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.e("ButtonTouch","touched up");
+                break;
+        }
+
+       return super.onTouchEvent(event);
+       // return  true;
+      //  return false;
     }
+
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event){
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.e("ButtonTouch","dispatch touched down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.e("ButtonTouch","dispatch touched move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.e("ButtonTouch","dispatch touched up");
+                break;
+        }
+
+        return super.dispatchTouchEvent(event);
+    }
+
+
+
+
+
 
 }

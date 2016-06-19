@@ -25,15 +25,44 @@ public class CustomLayout extends LinearLayout {
     }
 
 
-    @Override
+    /*@Override
     public  boolean onInterceptTouchEvent(MotionEvent ev){
         return false;
-    }
+    }*/
 
     @Override
     public boolean onTouchEvent(MotionEvent event){
-        Log.e("LayoutTouch","touched");
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.e("LayoutTouch","touched down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.e("LayoutTouch","touched move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.e("LayoutTouch","touched up");
+                break;
+
+        }
+
         return true;
+       // return false;
     }
 
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent event){
+        switch (event.getAction()){
+            case MotionEvent.ACTION_DOWN:
+                Log.e("LayoutTouch","dispatch touched down");
+                break;
+            case MotionEvent.ACTION_MOVE:
+                Log.e("LayoutTouch","dispatch touched move");
+                break;
+            case MotionEvent.ACTION_UP:
+                Log.e("LayoutTouch","dispatch touched up");
+                break;
+        }
+
+        return super.dispatchTouchEvent(event);
+    }
 }

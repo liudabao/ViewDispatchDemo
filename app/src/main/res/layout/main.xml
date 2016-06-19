@@ -11,12 +11,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="40dp"
-            android:id="@+id/button1"/>
+            android:id="@+id/button1"
+            android:text="button1"/>
         <com.example.lenovo.viewdispatchdemo.CustomButtom
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:id="@+id/button2"
-            android:layout_toStartOf="@+id/img" />
+            android:layout_toStartOf="@+id/img"
+            android:text="button2"/>
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="400dp"
